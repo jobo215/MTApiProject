@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "3e473f8b-11aa-44c8-968a-748e11354927",
+		"name": "MTApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Validated translation - success scenario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"source_language\": \"en-US\",\r\n    \"target_language\": \"de-DE\",\r\n    \"domain\": \"business\",\r\n    \"content\": \"This is test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/validated-translation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"validated-translation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validated translation - missing field",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"target_language\": \"de-DE\",\r\n    \"domain\": \"business\",\r\n    \"content\": \"This is test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/validated-translation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"validated-translation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validated translation - wrong source language",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"source_language\": \"en-ES\",\r\n    \"target_language\": \"de-DE\",\r\n    \"domain\": \"business\",\r\n    \"content\": \"This is test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/validated-translation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"validated-translation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validated translation - wrong domain",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"source_language\": \"en-US\",\r\n    \"target_language\": \"de-DE\",\r\n    \"domain\": \"test\",\r\n    \"content\": \"This is test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/validated-translation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"validated-translation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validation translation - content with more than 30 words",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"source_language\": \"en-US\",\r\n    \"target_language\": \"de-DE\",\r\n    \"domain\": \"business\",\r\n    \"content\": \"This is test  This is test This is test This is test This is test This is test This is test This is test This is test This is test This is test This is test This is test This is test This is test This is test This is test This is test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/validated-translation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"validated-translation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validated translation - wrong target language",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"source_language\": \"en-US\",\r\n    \"target_language\": \"de-ED\",\r\n    \"domain\": \"business\",\r\n    \"content\": \"This is test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/validated-translation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"validated-translation"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
